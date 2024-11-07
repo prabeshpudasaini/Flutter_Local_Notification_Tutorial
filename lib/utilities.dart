@@ -34,7 +34,7 @@ Future<NotificationWeekAndTime?> pickSchedule(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(
+          title: const Text(
             'I want to be reminded every:',
             textAlign: TextAlign.center,
           ),
@@ -49,29 +49,34 @@ Future<NotificationWeekAndTime?> pickSchedule(
                     Navigator.pop(context);
                   },
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
+                    backgroundColor: WidgetStateProperty.all(
                       Colors.teal,
                     ),
                   ),
-                  child: Text(weekdays[index]),
+                  child: Text(
+                    weekdays[index],
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
             ],
           ),
         );
       });
 
-  if (selectedDay != null) {
+  if (selectedDay != null && context.mounted) {
     timeOfDay = await showTimePicker(
         context: context,
         initialTime: TimeOfDay.fromDateTime(
           now.add(
-            Duration(minutes: 1),
+            const Duration(minutes: 1),
           ),
         ),
         builder: (BuildContext context, Widget? child) {
           return Theme(
             data: ThemeData(
-              colorScheme: ColorScheme.light(
+              colorScheme: const ColorScheme.light(
                 primary: Colors.teal,
               ),
             ),
@@ -86,5 +91,3 @@ Future<NotificationWeekAndTime?> pickSchedule(
   }
   return null;
 }
-
-

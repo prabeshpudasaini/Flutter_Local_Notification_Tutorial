@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AppBarTitle extends StatelessWidget {
-  const AppBarTitle({Key? key}) : super(key: key);
+  const AppBarTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class AppBarTitle extends StatelessWidget {
 }
 
 class PlantImage extends StatelessWidget {
-  const PlantImage({Key? key}) : super(key: key);
+  const PlantImage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +37,11 @@ class HomePageButtons extends StatelessWidget {
   final Future<void> Function() onPressedTwo;
   final Future<void> Function() onPressedThree;
   const HomePageButtons({
-    Key? key,
+    super.key,
     required this.onPressedOne,
     required this.onPressedTwo,
     required this.onPressedThree,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +53,10 @@ class HomePageButtons extends StatelessWidget {
           Expanded(
             child: ElevatedButton(
               style: ButtonStyle(
-                padding: MaterialStateProperty.all(
+                padding: WidgetStateProperty.all(
                     const EdgeInsets.symmetric(vertical: 20)),
-                backgroundColor: MaterialStateProperty.all(
-                  Colors.teal[600],
+                backgroundColor: WidgetStateProperty.all(
+                  Colors.teal,
                 ),
               ),
               onPressed: onPressedOne,
@@ -75,6 +75,7 @@ class HomePageButtons extends StatelessWidget {
                     'Plant Food',
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white,
                     ),
                   )
                 ],
@@ -87,10 +88,10 @@ class HomePageButtons extends StatelessWidget {
           Expanded(
             child: ElevatedButton(
               style: ButtonStyle(
-                padding: MaterialStateProperty.all(
+                padding: WidgetStateProperty.all(
                     const EdgeInsets.symmetric(vertical: 20)),
-                backgroundColor: MaterialStateProperty.all(
-                  Colors.teal[600],
+                backgroundColor: WidgetStateProperty.all(
+                  Colors.teal,
                 ),
               ),
               onPressed: onPressedTwo,
@@ -98,7 +99,7 @@ class HomePageButtons extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FaIcon(
-                    FontAwesomeIcons.tint,
+                    FontAwesomeIcons.droplet,
                     size: 14,
                     color: Colors.teal[50],
                   ),
@@ -109,6 +110,7 @@ class HomePageButtons extends StatelessWidget {
                     'Water',
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white,
                     ),
                   )
                 ],
@@ -121,10 +123,10 @@ class HomePageButtons extends StatelessWidget {
           Expanded(
             child: ElevatedButton(
               style: ButtonStyle(
-                padding: MaterialStateProperty.all(
+                padding: WidgetStateProperty.all(
                     const EdgeInsets.symmetric(vertical: 20)),
-                backgroundColor: MaterialStateProperty.all(
-                  Colors.teal[600],
+                backgroundColor: WidgetStateProperty.all(
+                  Colors.teal,
                 ),
               ),
               onPressed: onPressedThree,
@@ -132,7 +134,7 @@ class HomePageButtons extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   FaIcon(
-                    FontAwesomeIcons.solidTimesCircle,
+                    FontAwesomeIcons.solidCircleXmark,
                     size: 14,
                     color: Colors.teal[50],
                   ),
@@ -143,6 +145,7 @@ class HomePageButtons extends StatelessWidget {
                     'Cancel',
                     style: TextStyle(
                       fontSize: 15,
+                      color: Colors.white,
                     ),
                   )
                 ],
@@ -156,7 +159,7 @@ class HomePageButtons extends StatelessWidget {
 }
 
 class PlantStats extends StatelessWidget {
-  const PlantStats({Key? key}) : super(key: key);
+  const PlantStats({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -203,7 +206,7 @@ class PlantStats extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               FaIcon(
-                FontAwesomeIcons.tint,
+                FontAwesomeIcons.droplet,
                 size: 20,
                 color: Colors.teal[50],
               ),

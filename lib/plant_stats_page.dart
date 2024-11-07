@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_awesome_notifications_tutorial/widgets.dart';
 
 class PlantStatsPage extends StatelessWidget {
-  const PlantStatsPage({Key? key}) : super(key: key);
+  const PlantStatsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Colors.white,
         centerTitle: true,
-        title: AppBarTitle(),
+        title: const AppBarTitle(),
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -21,14 +23,14 @@ class PlantStatsPage extends StatelessWidget {
                 'Your Plant Stats',
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 45,
               ),
-              PlantImage(),
-              SizedBox(
+              const PlantImage(),
+              const SizedBox(
                 height: 25,
               ),
-              PlantStats(),
+              const PlantStats(),
             ],
           ),
         ),
